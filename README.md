@@ -1,0 +1,68 @@
+# Quality Config
+Repository for shared quality config file across multiple project.
+
+__Code Analysis tools__
+- [Checkstyle](http://checkstyle.sourceforge.net/).
+- [PMD](https://pmd.github.io/).
+- [Findbugs](http://findbugs.sourceforge.net/).
+
+### Suggestion for Android
+For easy and clean way to apply all Analysis tools on Android Project check this [Android Check](https://github.com/noveogroup/android-check), All config of this project should work with it.
+
+
+## Usage
+### Gradle
+download or update config file by [Gradle Download Task](https://github.com/michel-kraemer/gradle-download-task).
+
+setup plugins
+
+```groovy
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'de.undercouch:gradle-download-task:2.1.0'
+    }
+}
+
+apply plugin: 'de.undercouch.download'
+```
+Add config file download task on root's Build-Script or moudule one
+ 
+```groovy 
+import de.undercouch.gradle.tasks.download.Download
+task updateConfig(type: Download) {
+    src([
+            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/checkstyle.xml',
+            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/pmd.xml',
+            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/firebug.xml',
+    ])
+    dest "$rootDir/config/" //Change to config path you like
+}
+```
+
+Then call updateConfig task
+
+```
+./graldew updateConfig
+```
+
+Feel free to remove all these gradle snippet,these config is hardy to update. Except I found bug!
+
+###Manual
+If gradle is too complex, just manual download it ^-^
+
+##License
+This Project licensed under the
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+
+
