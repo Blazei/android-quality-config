@@ -1,5 +1,5 @@
-# Quality Config
-Repository for shared quality config file across multiple project.
+# Java Quality Config
+This Repository was created to share config file of Code Analysis Tools across my project. Feel free to folk this and make your own rule!
 
 __Code Analysis tools__
 - [Checkstyle](http://checkstyle.sourceforge.net/).
@@ -12,7 +12,7 @@ For easy and clean way to apply all Analysis tools on Android Project check this
 
 ## Usage
 ### Gradle
-download or update config file by [Gradle Download Task](https://github.com/michel-kraemer/gradle-download-task).
+Download or update config file by [Gradle Download Task](https://github.com/michel-kraemer/gradle-download-task).
 
 setup plugins
 
@@ -28,15 +28,15 @@ buildscript {
 
 apply plugin: 'de.undercouch.download'
 ```
-Add config file download task on root's Build-Script or moudule one
+Add config file download task on root's build.gradle or module one
  
 ```groovy 
 import de.undercouch.gradle.tasks.download.Download
 task updateConfig(type: Download) {
     src([
-            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/checkstyle.xml',
-            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/pmd.xml',
-            'https://raw.githubusercontent.com/Blazei/android-quality-config/master/config/firebug.xml',
+            'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/checkstyle.xml',
+            'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/pmd.xml',
+            'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/firebug.xml',
     ])
     dest "$rootDir/config/" //Change to config path you like
 }
@@ -48,7 +48,7 @@ Then call updateConfig task
 ./graldew updateConfig
 ```
 
-Feel free to remove all these gradle snippet,these config is hardy to update. Except I found bug!
+Feel free to remove all these gradle snippet, these config is hardy to update... Except I found bug!
 
 ###Manual
 If gradle is too complex, just manual download it ^-^
