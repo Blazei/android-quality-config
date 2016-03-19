@@ -36,7 +36,7 @@ task updateConfig(type: Download) {
     src([
             'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/checkstyle.xml',
             'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/pmd.xml',
-            'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/firebug.xml',
+            'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/findbugs.xml',
     ])
     dest "$rootDir/config/" //Change to config path you like
 }
