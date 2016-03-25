@@ -1,0 +1,18 @@
+apply plugin: 'checkstyle'
+apply plugin: 'pmd'
+apply plugin: 'findbugs'
+
+checkstyle {
+    toolVersion '6.10.1'
+    configFile rootProject.file('config/checkstyle.xml')
+}
+
+pmd {
+    toolVersion '5.3.4'
+    ruleSetFiles = files(rootProject.file('config/pmd.xml'))
+}
+
+findbugs {
+    toolVersion '3.0.1'
+    excludeFilter rootProject.file('config/findbugs.xml')
+}
