@@ -10,11 +10,12 @@ __Code Analysis tools__
 For easy and clean way to apply all Analysis tools on Android Project check this [Android Check](https://github.com/noveogroup/android-check), All config of this project should work with it.
 
 
-## Usage
+## Setup
+
 ### Gradle
 Download or update config file by [Gradle Download Task](https://github.com/michel-kraemer/gradle-download-task).
 
-setup plugins
+*Step 1* setup plugins
 
 ```groovy
 buildscript {
@@ -28,7 +29,7 @@ buildscript {
 
 apply plugin: 'de.undercouch.download'
 ```
-Add config file download task on root's build.gradle or module one
+*Step 2* Add config file download task on root's build.gradle or module one
  
 ```groovy 
 import de.undercouch.gradle.tasks.download.Download
@@ -38,7 +39,7 @@ task updateConfig(type: Download) {
             'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/pmd.xml',
             'https://raw.githubusercontent.com/Blazei/java-quality-config/master/config/findbugs.xml',
     ])
-    dest "$rootDir/config/" //Change to config path you like
+    dest "$rootDir/config/" //Can change to config path you like
 }
 ```
 
@@ -50,8 +51,22 @@ Then call updateConfig task
 
 Feel free to remove all these gradle snippet, these config is hardy to update... Except I found bug!
 
-###Manual
-If gradle is too complex, just manual download it ^-^
+If gradle download is too complex, just manual download it ^-^
+
+*Step 3*  
+**Java module**
+
+Add follow line to build.gradle of module (config file must locate at ```rootDir/config```)
+
+```groovy
+apply from: 'https://raw.githubusercontent.com/Blazei/java-quality-config/master/java/quality.gradle'
+```
+
+**Android module**
+
+setup follow [README.md](https://github.com/noveogroup/android-check/blob/master/README.md) of [Android Check](https://github.com/noveogroup/android-check)
+
+
 
 ##License
 This Project licensed under the
