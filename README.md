@@ -12,10 +12,10 @@ For easy and clean way to apply all Analysis tools on Android Project check this
 
 ## Setup
 
-### Gradle
+### Donwload Config file
 Download or update config file by [Gradle Download Task](https://github.com/michel-kraemer/gradle-download-task).
 
-*Step 1* setup plugins
+*Step 1* Setup gradle download task plugins
 
 ```groovy
 buildscript {
@@ -51,9 +51,8 @@ Then call updateConfig task
 
 Feel free to remove all these gradle snippet, these config is hardy to update... Except I found bug!
 
-If gradle download is too complex, just manual download it ^-^
+### Apply Code Quality Plug-in
 
-*Step 3*  
 **Java module**
 
 Add follow line to build.gradle of module (config file must locate at ```rootDir/config```)
