@@ -43,7 +43,7 @@ task updateConfig(type: Download) {
 }
 ```
 
-Then call updateConfig task
+*Step 3* call updateConfig task
 
 ```
 ./graldew updateConfig
