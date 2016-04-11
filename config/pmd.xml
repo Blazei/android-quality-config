@@ -60,7 +60,9 @@
 
     <rule ref="rulesets/java/imports.xml"/>
 
-    <rule ref="rulesets/java/junit.xml"/>
+    <rule ref="rulesets/java/junit.xml">
+        <exclude name="JUnitAssertionsShouldIncludeMessage"/>
+    </rule>
 
     <rule ref="rulesets/java/logging-jakarta-commons.xml">
         <exclude name="GuardLogStatement"/>
